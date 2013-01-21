@@ -1,6 +1,7 @@
 var page = require('webpage').create(),
     fs = require('fs'),
     system = require('system');
+    
 
 if (system.args.length === 1) {
     console.log('Usage: netsniff.coffee <some URL>');
@@ -45,7 +46,6 @@ else {
       var url = page.evaluate(function() {
         return document.URL;
       });
-      console.log('Page title is ' + page.title);
       har = createHAR(url, page.title, page.startTime, page.resources);
       var filename = page.evaluate(function() {
         return document.URL + '-' + Math.random().toString(36).substring(7);;
@@ -63,11 +63,13 @@ else {
 
       filename = '/tmp/performance_test_data/' + id + '/har/' + filename + '.json';
 
-      f = fs.open(filename, "w");
+      var f = fs.open(filename, "w");
       f.writeLine(JSON.stringify(har, undefined, 4));
       f.close();
 
+      fs.write('/tmp/filenames.txt', filename, "a");
 
+      console.log('Page title is ' + page.title);
     }
     else {
       console.log('FAIL to load the address');
