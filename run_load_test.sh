@@ -10,5 +10,8 @@ $DRUSH -r $RESULTS_SITE_PATH -l $RESULTS_SITE_URI pts
 # install so change directory here.
 cd $BEHAT_TESTS
 $BEHAT_TESTS/bin/behat $BEHAT_TESTS/features
+
+$DRUSH -r $RESULTS_SITE_PATH -l $RESULTS_SITE_URI migrate-import --all
 $DRUSH -r $RESULTS_SITE_PATH -l $RESULTS_SITE_URI pttd
+
 pkill -P $PID

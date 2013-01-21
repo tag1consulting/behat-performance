@@ -1,6 +1,5 @@
 SAHI_HOME="/path/to/sahi"
-BEHAT="/path/to/bin/behat"
-FEATURES="/path/to/tests/features/directory"
+BEHAT_TESTS="/path/to/behat_tests"
 DRUSH="/usr/bin/drush"
 RESULTS_SITE_PATH="/path/to/results/site/install"
 RESULTS_SITE_URI="http://7.localhost:81"
