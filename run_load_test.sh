@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=$(cd $(dirname "$0"); pwd)
+DIR=$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)
 source $DIR/run_load_test.cfg
 $DIR/start_sahi.sh&
 PID=$!
