@@ -1,4 +1,4 @@
-SAHI_HOME="/path/to/sahi"
+PHANTOMJS="/path/to/phantomjs"
 BEHAT_TESTS="/path/to/behat_tests"
 DRUSH="/usr/bin/drush"
 RESULTS_SITE_PATH="/path/to/results/site/install"

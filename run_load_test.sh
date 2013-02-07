@@ -2,7 +2,7 @@
 
 DIR=$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)
 source $DIR/run_load_test.cfg
-$DIR/start_sahi.sh&
+$PHANTOMJS --webdriver=4444 &
 PID=$!
 $DRUSH -r $RESULTS_SITE_PATH -l $RESULTS_SITE_URI pts
 
