@@ -2,7 +2,7 @@
 
 DIR=$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)
 source $DIR/run_load_test.cfg
-$PHANTOMJS --webdriver=4444 &
+$PHANTOMJS --webdriver=4444 $PHANTOMNETWORKJS &
 PID=$!
 $DRUSH -r $RESULTS_SITE_PATH -l $RESULTS_SITE_URI pts
 
